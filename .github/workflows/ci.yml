@@ -1,11 +1,13 @@
 name: CI
 
+run-name: "24f1002007@ds.study.iitm.ac.in"  # Add this line!
+
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # Manual trigger
-  schedule:  # Add this block
-    - cron: '0 0 * * *'  # Daily at midnight UTC (safe, low quota use)
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   test:
