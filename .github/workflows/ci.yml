@@ -1,13 +1,15 @@
-name: CI  # Name your workflow
+name: CI
 
 on:
-  push:  # Runs when you push code
-    branches: [ main ]  # On main branch
-  workflow_dispatch:  # Lets you manually trigger it (key for testing)[]
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # Manual trigger
+  schedule:  # Add this block
+    - cron: '0 0 * * *'  # Daily at midnight UTC (safe, low quota use)
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Free Linux machine
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4  # Grabs your code
-    - run: echo "Tests passed!"  # Fake "test" that always succeeds
+    - uses: actions/checkout@v4
+    - run: echo "Tests passed!"
