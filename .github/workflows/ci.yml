@@ -1,6 +1,7 @@
 name: CI
 
-run-name: "24f1002007@ds.study.iitm.ac.in"  # Add this line!
+run-name: "CI by 24f1002007@ds.study.iitm.ac.in (${{ github.actor }})"  # Dynamic!
+# Add this line!
 
 on:
   push:
